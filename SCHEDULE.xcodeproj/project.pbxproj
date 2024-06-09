@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A00C799D2C0AF0FF004489A9 /* AttendanceListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00C799C2C0AF0FF004489A9 /* AttendanceListDetailView.swift */; };
+		A00C799F2C0B0496004489A9 /* AttendanceEditForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00C799E2C0B0496004489A9 /* AttendanceEditForm.swift */; };
+		A00C79A12C0B0AA6004489A9 /* AttendanceEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00C79A02C0B0AA6004489A9 /* AttendanceEditViewModel.swift */; };
+		A00C79A32C0B7EFF004489A9 /* AttendanceCreateForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00C79A22C0B7EFF004489A9 /* AttendanceCreateForm.swift */; };
+		A00C79A52C0B81D1004489A9 /* AttendanceCreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00C79A42C0B81D1004489A9 /* AttendanceCreateViewModel.swift */; };
+		A01E8DD42C09ABD400C6B3D6 /* StudentAttendanceForTeacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01E8DD32C09ABD300C6B3D6 /* StudentAttendanceForTeacher.swift */; };
+		A01E8DD62C09B80700C6B3D6 /* TeacherAttendanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01E8DD52C09B80700C6B3D6 /* TeacherAttendanceViewModel.swift */; };
+		A01E8DD82C09C55300C6B3D6 /* GroupAttendanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01E8DD72C09C55300C6B3D6 /* GroupAttendanceView.swift */; };
+		A01E8DDA2C09DD3B00C6B3D6 /* StudentListAttendanceVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01E8DD92C09DD3B00C6B3D6 /* StudentListAttendanceVIew.swift */; };
 		A0237A1D2BF0BE7C0075F95B /* SCHEDULEApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0237A1C2BF0BE7C0075F95B /* SCHEDULEApp.swift */; };
 		A0237A1F2BF0BE7C0075F95B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0237A1E2BF0BE7C0075F95B /* ContentView.swift */; };
 		A0237A212BF0BE7E0075F95B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0237A202BF0BE7E0075F95B /* Assets.xcassets */; };
@@ -14,6 +23,27 @@
 		A0237A2E2BF0BE7F0075F95B /* SCHEDULETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0237A2D2BF0BE7F0075F95B /* SCHEDULETests.swift */; };
 		A0237A382BF0BE7F0075F95B /* SCHEDULEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0237A372BF0BE7F0075F95B /* SCHEDULEUITests.swift */; };
 		A0237A3A2BF0BE7F0075F95B /* SCHEDULEUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0237A392BF0BE7F0075F95B /* SCHEDULEUITestsLaunchTests.swift */; };
+		A0237A472BF0C3FB0075F95B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0237A462BF0C3FB0075F95B /* LoginView.swift */; };
+		A0237A4A2BF0EB990075F95B /* StudentProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0237A492BF0EB990075F95B /* StudentProfileView.swift */; };
+		A0237A4C2BF0EBE40075F95B /* TeacherProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0237A4B2BF0EBE30075F95B /* TeacherProfileView.swift */; };
+		A0237A4E2BF0F7550075F95B /* TeacherScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0237A4D2BF0F7550075F95B /* TeacherScheduleView.swift */; };
+		A0237A502BF0F7660075F95B /* StudentScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0237A4F2BF0F7660075F95B /* StudentScheduleView.swift */; };
+		A0237A522BF1103F0075F95B /* StudentAttendenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0237A512BF1103F0075F95B /* StudentAttendenceView.swift */; };
+		A0237A542BF110580075F95B /* TeacherAttendenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0237A532BF110580075F95B /* TeacherAttendenceView.swift */; };
+		A02E57702C08A5C2001B2EFA /* StudentAttendance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E576F2C08A5C2001B2EFA /* StudentAttendance.swift */; };
+		A02E57722C08A99A001B2EFA /* StudentAttendanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E57712C08A99A001B2EFA /* StudentAttendanceViewModel.swift */; };
+		A02E57742C08BD57001B2EFA /* DetailAttendanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E57732C08BD57001B2EFA /* DetailAttendanceView.swift */; };
+		A02E57762C08BFB1001B2EFA /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E57752C08BFB1001B2EFA /* CalendarView.swift */; };
+		A08F75542C044095004FB9C6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08F75532C044095004FB9C6 /* User.swift */; };
+		A08F75562C044E56004FB9C6 /* StudentStatementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08F75552C044E56004FB9C6 /* StudentStatementViewModel.swift */; };
+		A08F75582C046347004FB9C6 /* TeacherStatementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08F75572C046347004FB9C6 /* TeacherStatementViewModel.swift */; };
+		A0A9AEE42BFC51A600F42FC9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A9AEE32BFC51A600F42FC9 /* LoginViewModel.swift */; };
+		A0D94CAB2C0A271C00A3B9AD /* AttendanceListForTeacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D94CAA2C0A271C00A3B9AD /* AttendanceListForTeacher.swift */; };
+		A0D94CAD2C0A27A600A3B9AD /* AttendanceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D94CAC2C0A27A600A3B9AD /* AttendanceListView.swift */; };
+		A0D94CAF2C0A285500A3B9AD /* AttendanceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D94CAE2C0A285500A3B9AD /* AttendanceListViewModel.swift */; };
+		A0DF95572C06E19E00A51812 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF95562C06E19E00A51812 /* Schedule.swift */; };
+		A0DF95592C06E37E00A51812 /* StudentScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF95582C06E37E00A51812 /* StudentScheduleViewModel.swift */; };
+		A0DF955B2C06FB4800A51812 /* TeacherScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF955A2C06FB4800A51812 /* TeacherScheduleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +64,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A00C799C2C0AF0FF004489A9 /* AttendanceListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceListDetailView.swift; sourceTree = "<group>"; };
+		A00C799E2C0B0496004489A9 /* AttendanceEditForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceEditForm.swift; sourceTree = "<group>"; };
+		A00C79A02C0B0AA6004489A9 /* AttendanceEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceEditViewModel.swift; sourceTree = "<group>"; };
+		A00C79A22C0B7EFF004489A9 /* AttendanceCreateForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceCreateForm.swift; sourceTree = "<group>"; };
+		A00C79A42C0B81D1004489A9 /* AttendanceCreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceCreateViewModel.swift; sourceTree = "<group>"; };
+		A01E8DD32C09ABD300C6B3D6 /* StudentAttendanceForTeacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAttendanceForTeacher.swift; sourceTree = "<group>"; };
+		A01E8DD52C09B80700C6B3D6 /* TeacherAttendanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherAttendanceViewModel.swift; sourceTree = "<group>"; };
+		A01E8DD72C09C55300C6B3D6 /* GroupAttendanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAttendanceView.swift; sourceTree = "<group>"; };
+		A01E8DD92C09DD3B00C6B3D6 /* StudentListAttendanceVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListAttendanceVIew.swift; sourceTree = "<group>"; };
 		A0237A192BF0BE7C0075F95B /* SCHEDULE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCHEDULE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0237A1C2BF0BE7C0075F95B /* SCHEDULEApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCHEDULEApp.swift; sourceTree = "<group>"; };
 		A0237A1E2BF0BE7C0075F95B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +83,27 @@
 		A0237A332BF0BE7F0075F95B /* SCHEDULEUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCHEDULEUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0237A372BF0BE7F0075F95B /* SCHEDULEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCHEDULEUITests.swift; sourceTree = "<group>"; };
 		A0237A392BF0BE7F0075F95B /* SCHEDULEUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCHEDULEUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A0237A462BF0C3FB0075F95B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A0237A492BF0EB990075F95B /* StudentProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfileView.swift; sourceTree = "<group>"; };
+		A0237A4B2BF0EBE30075F95B /* TeacherProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherProfileView.swift; sourceTree = "<group>"; };
+		A0237A4D2BF0F7550075F95B /* TeacherScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherScheduleView.swift; sourceTree = "<group>"; };
+		A0237A4F2BF0F7660075F95B /* StudentScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentScheduleView.swift; sourceTree = "<group>"; };
+		A0237A512BF1103F0075F95B /* StudentAttendenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAttendenceView.swift; sourceTree = "<group>"; };
+		A0237A532BF110580075F95B /* TeacherAttendenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherAttendenceView.swift; sourceTree = "<group>"; };
+		A02E576F2C08A5C2001B2EFA /* StudentAttendance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAttendance.swift; sourceTree = "<group>"; };
+		A02E57712C08A99A001B2EFA /* StudentAttendanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAttendanceViewModel.swift; sourceTree = "<group>"; };
+		A02E57732C08BD57001B2EFA /* DetailAttendanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAttendanceView.swift; sourceTree = "<group>"; };
+		A02E57752C08BFB1001B2EFA /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		A08F75532C044095004FB9C6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A08F75552C044E56004FB9C6 /* StudentStatementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentStatementViewModel.swift; sourceTree = "<group>"; };
+		A08F75572C046347004FB9C6 /* TeacherStatementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherStatementViewModel.swift; sourceTree = "<group>"; };
+		A0A9AEE32BFC51A600F42FC9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A0D94CAA2C0A271C00A3B9AD /* AttendanceListForTeacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceListForTeacher.swift; sourceTree = "<group>"; };
+		A0D94CAC2C0A27A600A3B9AD /* AttendanceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceListView.swift; sourceTree = "<group>"; };
+		A0D94CAE2C0A285500A3B9AD /* AttendanceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceListViewModel.swift; sourceTree = "<group>"; };
+		A0DF95562C06E19E00A51812 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		A0DF95582C06E37E00A51812 /* StudentScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentScheduleViewModel.swift; sourceTree = "<group>"; };
+		A0DF955A2C06FB4800A51812 /* TeacherScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherScheduleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +154,10 @@
 		A0237A1B2BF0BE7C0075F95B /* SCHEDULE */ = {
 			isa = PBXGroup;
 			children = (
+				A08F75522C043F8B004FB9C6 /* Models */,
+				A0A9AEE22BFC518200F42FC9 /* ViewModels */,
+				A0237A482BF0E96B0075F95B /* Views */,
 				A0237A1C2BF0BE7C0075F95B /* SCHEDULEApp.swift */,
-				A0237A1E2BF0BE7C0075F95B /* ContentView.swift */,
 				A0237A202BF0BE7E0075F95B /* Assets.xcassets */,
 				A0237A222BF0BE7E0075F95B /* Preview Content */,
 			);
@@ -125,6 +187,58 @@
 				A0237A392BF0BE7F0075F95B /* SCHEDULEUITestsLaunchTests.swift */,
 			);
 			path = SCHEDULEUITests;
+			sourceTree = "<group>";
+		};
+		A0237A482BF0E96B0075F95B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A0237A1E2BF0BE7C0075F95B /* ContentView.swift */,
+				A0237A462BF0C3FB0075F95B /* LoginView.swift */,
+				A0237A492BF0EB990075F95B /* StudentProfileView.swift */,
+				A0237A4F2BF0F7660075F95B /* StudentScheduleView.swift */,
+				A0237A512BF1103F0075F95B /* StudentAttendenceView.swift */,
+				A0237A4B2BF0EBE30075F95B /* TeacherProfileView.swift */,
+				A0237A4D2BF0F7550075F95B /* TeacherScheduleView.swift */,
+				A0237A532BF110580075F95B /* TeacherAttendenceView.swift */,
+				A02E57732C08BD57001B2EFA /* DetailAttendanceView.swift */,
+				A02E57752C08BFB1001B2EFA /* CalendarView.swift */,
+				A01E8DD72C09C55300C6B3D6 /* GroupAttendanceView.swift */,
+				A01E8DD92C09DD3B00C6B3D6 /* StudentListAttendanceVIew.swift */,
+				A0D94CAC2C0A27A600A3B9AD /* AttendanceListView.swift */,
+				A00C799C2C0AF0FF004489A9 /* AttendanceListDetailView.swift */,
+				A00C799E2C0B0496004489A9 /* AttendanceEditForm.swift */,
+				A00C79A22C0B7EFF004489A9 /* AttendanceCreateForm.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A08F75522C043F8B004FB9C6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A08F75532C044095004FB9C6 /* User.swift */,
+				A0DF95562C06E19E00A51812 /* Schedule.swift */,
+				A02E576F2C08A5C2001B2EFA /* StudentAttendance.swift */,
+				A01E8DD32C09ABD300C6B3D6 /* StudentAttendanceForTeacher.swift */,
+				A0D94CAA2C0A271C00A3B9AD /* AttendanceListForTeacher.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A0A9AEE22BFC518200F42FC9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A0A9AEE32BFC51A600F42FC9 /* LoginViewModel.swift */,
+				A08F75552C044E56004FB9C6 /* StudentStatementViewModel.swift */,
+				A08F75572C046347004FB9C6 /* TeacherStatementViewModel.swift */,
+				A0DF95582C06E37E00A51812 /* StudentScheduleViewModel.swift */,
+				A0DF955A2C06FB4800A51812 /* TeacherScheduleViewModel.swift */,
+				A02E57712C08A99A001B2EFA /* StudentAttendanceViewModel.swift */,
+				A01E8DD52C09B80700C6B3D6 /* TeacherAttendanceViewModel.swift */,
+				A0D94CAE2C0A285500A3B9AD /* AttendanceListViewModel.swift */,
+				A00C79A02C0B0AA6004489A9 /* AttendanceEditViewModel.swift */,
+				A00C79A42C0B81D1004489A9 /* AttendanceCreateViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +371,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A08F75562C044E56004FB9C6 /* StudentStatementViewModel.swift in Sources */,
+				A08F75582C046347004FB9C6 /* TeacherStatementViewModel.swift in Sources */,
+				A0237A542BF110580075F95B /* TeacherAttendenceView.swift in Sources */,
+				A0DF95572C06E19E00A51812 /* Schedule.swift in Sources */,
+				A08F75542C044095004FB9C6 /* User.swift in Sources */,
+				A00C79A12C0B0AA6004489A9 /* AttendanceEditViewModel.swift in Sources */,
+				A0237A472BF0C3FB0075F95B /* LoginView.swift in Sources */,
+				A0D94CAB2C0A271C00A3B9AD /* AttendanceListForTeacher.swift in Sources */,
+				A0D94CAF2C0A285500A3B9AD /* AttendanceListViewModel.swift in Sources */,
+				A0D94CAD2C0A27A600A3B9AD /* AttendanceListView.swift in Sources */,
 				A0237A1F2BF0BE7C0075F95B /* ContentView.swift in Sources */,
+				A00C799D2C0AF0FF004489A9 /* AttendanceListDetailView.swift in Sources */,
+				A0237A4E2BF0F7550075F95B /* TeacherScheduleView.swift in Sources */,
+				A02E57762C08BFB1001B2EFA /* CalendarView.swift in Sources */,
+				A02E57702C08A5C2001B2EFA /* StudentAttendance.swift in Sources */,
+				A0237A522BF1103F0075F95B /* StudentAttendenceView.swift in Sources */,
+				A01E8DD42C09ABD400C6B3D6 /* StudentAttendanceForTeacher.swift in Sources */,
+				A00C79A52C0B81D1004489A9 /* AttendanceCreateViewModel.swift in Sources */,
+				A00C79A32C0B7EFF004489A9 /* AttendanceCreateForm.swift in Sources */,
+				A00C799F2C0B0496004489A9 /* AttendanceEditForm.swift in Sources */,
+				A0DF95592C06E37E00A51812 /* StudentScheduleViewModel.swift in Sources */,
+				A0237A4A2BF0EB990075F95B /* StudentProfileView.swift in Sources */,
+				A0237A4C2BF0EBE40075F95B /* TeacherProfileView.swift in Sources */,
+				A02E57742C08BD57001B2EFA /* DetailAttendanceView.swift in Sources */,
+				A01E8DD62C09B80700C6B3D6 /* TeacherAttendanceViewModel.swift in Sources */,
 				A0237A1D2BF0BE7C0075F95B /* SCHEDULEApp.swift in Sources */,
+				A0DF955B2C06FB4800A51812 /* TeacherScheduleViewModel.swift in Sources */,
+				A01E8DD82C09C55300C6B3D6 /* GroupAttendanceView.swift in Sources */,
+				A0A9AEE42BFC51A600F42FC9 /* LoginViewModel.swift in Sources */,
+				A0237A502BF0F7660075F95B /* StudentScheduleView.swift in Sources */,
+				A02E57722C08A99A001B2EFA /* StudentAttendanceViewModel.swift in Sources */,
+				A01E8DDA2C09DD3B00C6B3D6 /* StudentListAttendanceVIew.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
