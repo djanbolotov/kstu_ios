@@ -105,6 +105,7 @@ struct TimelineViewModal: View {
         formatter.dateFormat = "yyyy-MM-dd'T'HH"
         return formatter
     }
+    var scheduleHours = ["08:00", "09:30", "11:00", "13:00", "14:30", "16:00", "17:30", "19:00", "20:30"]
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
@@ -119,10 +120,10 @@ struct TimelineViewModal: View {
                 }
                 
                 
-                ForEach(0..<24) { hour in
+                ForEach(scheduleHours, id:\.self) { hour in
                     ZStack{
                         HStack {
-                            Text("\(hour):00")
+                            Text(hour)
                                 .frame(width: 60, alignment: .trailing)
                             Spacer()
                         }
@@ -147,23 +148,20 @@ struct TimelineViewModal: View {
         .padding(20)
     }
     
-    private func attendanceStatus(forHour hour: Int) -> AttendanceStatus? {
-            let hourString = String(format: "%02d", hour)
-            let targetDate = dateFormatter.string(from: date) + "T" + hourString
-            let targetNewDate = targetDate.prefix(upTo: targetDate.firstIndex(of: "T")!) + "T" + hourString
+    private func attendanceStatus(forHour hour: String) -> AttendanceStatus? {
+            let targetDate = dateFormatter.string(from: date) + "T" + hour
+            let targetNewDate = targetDate.prefix(upTo: targetDate.firstIndex(of: "T")!) + "T" + hour
 
-            let attendance = attendanceDetails.first { $0.attendanceDate.prefix(upTo: $0.attendanceDate.firstIndex(of: ":")!) == targetNewDate }
+            let attendance = attendanceDetails.first { $0.attendanceDate.prefix(upTo: $0.attendanceDate.firstIndex(of: ":")!) == targetNewDate.prefix(upTo: targetNewDate.firstIndex(of: ":")!) }
             
         return attendance?.attendanceStatus
     }
     
-    private func attendanceColor(forHour hour: Int) -> Color {
-        let hourString = String(format: "%02d", hour)
-        let targetDate = dateFormatter.string(from: date) + "T" + hourString
-        let targetNewDate = targetDate.prefix(upTo: targetDate.firstIndex(of: "T")!) + "T" + hourString
+    private func attendanceColor(forHour hour: String) -> Color {
+        let targetDate = dateFormatter.string(from: date) + "T" + hour
+        let targetNewDate = targetDate.prefix(upTo: targetDate.firstIndex(of: "T")!) + "T" + hour
 
-        let attendance = attendanceDetails.first { $0.attendanceDate.prefix(upTo: $0.attendanceDate.firstIndex(of: ":")!) == targetNewDate }
-        
+        let attendance = attendanceDetails.first { $0.attendanceDate.prefix(upTo: $0.attendanceDate.firstIndex(of: ":")!) == targetNewDate.prefix(upTo: targetNewDate.firstIndex(of: ":")!) }
         return attendance != nil ? color(for: attendance!.attendanceStatus) : .clear
     }
     

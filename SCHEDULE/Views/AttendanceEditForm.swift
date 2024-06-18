@@ -6,6 +6,9 @@ struct AttendanceEditForm: View {
     var statementId: Int
     @StateObject private var viewModel: AttendanceEditViewModel
     @Environment(\.presentationMode) var presentationMode
+    
+    @State private var showStatusPicker: Bool = false
+    @State private var selectedAttendance: AttendanceForCreateOrEditDTO?
 
     init(date: String, group: String, statementId: Int, attendances: [AttendanceForCreateOrEditDTO]) {
         self.date = date
@@ -46,13 +49,20 @@ struct AttendanceEditForm: View {
                             .frame(width: 170)
                         Spacer()
 
-                        Picker(selection: $attendance.attendanceStatus, label: Text("")) {
-                            ForEach(AttendanceStatus.allCases) { status in
-                                Text(status.shortName).tag(status)
-                            }
-                        }
-                        .pickerStyle(MenuPickerStyle())
-                        .frame(width:150)
+                        Text(attendance.attendanceStatus.shortName)
+                                                    .onTapGesture(count: 2) {
+                                                        if attendance.attendanceStatus == .PRESENT {
+                                                            attendance.attendanceStatus = .ABSENT
+                                                        } else {
+                                                            attendance.attendanceStatus = .PRESENT
+                                                        }
+                                                    }
+                                                Button(action: {
+                                                    selectedAttendance = attendance
+                                                    showStatusPicker.toggle()
+                                                }) {
+                                                    Image(systemName: "chevron.down")
+                                                }
                     }
                     .padding()
                 }
@@ -70,5 +80,19 @@ struct AttendanceEditForm: View {
                         .padding(.top)
         }
         .navigationBarTitle("Изменить посещаемость", displayMode: .inline)
+        .actionSheet(isPresented: $showStatusPicker) {
+                    ActionSheet(
+                        title: Text("Изменить статус"),
+                        buttons: AttendanceStatus.allCases.map { status in
+                            .default(Text(status.shortName)) {
+                                if let selected = selectedAttendance {
+                                    if let index = viewModel.attendances.firstIndex(where: { $0.studentId == selected.studentId }) {
+                                        viewModel.attendances[index].attendanceStatus = status
+                                    }
+                                }
+                            }
+                        } + [.cancel()]
+                    )
+                }
     }
 }

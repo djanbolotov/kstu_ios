@@ -7,6 +7,9 @@ struct AttendanceCreateForm: View {
     @Environment(\.presentationMode) var presentationMode
     
     @State private var date = Date()
+    @State private var selectedTime = "08:00"
+    @State private var showStatusPicker: Bool = false
+    @State private var selectedAttendance: AttendanceForCreateOrEditDTO?
 
     init(group: String, statementId: Int, viewModel: AttendanceCreateViewModel) {
         self.group = group
@@ -14,16 +17,27 @@ struct AttendanceCreateForm: View {
         self.viewModel = viewModel
     }
     
+    var scheduleHours = ["08:00", "09:30", "11:00", "13:00", "14:30", "16:00", "17:30", "19:00", "20:30"]
+
     var body: some View {
         VStack {
-            VStack {
-                        DatePicker("Дата посещаемости", selection: $date, displayedComponents: [.date, .hourAndMinute])
-                        .labelsHidden()
+            HStack {
+                DatePicker("Дата посещаемости", selection: $date, displayedComponents: [.date])
+                    .labelsHidden()
+                
+                Picker("Время", selection: $selectedTime) {
+                    ForEach(scheduleHours, id: \.self) { time in
+                        Text(time).tag(time)
                     }
+                }
+                .pickerStyle(MenuPickerStyle())
+                .labelsHidden()
+            }
             
             Text("Студенты группы: \(group)")
                 .font(.title2)
                 .padding()
+            
             HStack {
                 Text("Подгруппа:")
                 Picker(selection: $viewModel.subgroup, label: Text("Подгруппа")) {
@@ -33,14 +47,12 @@ struct AttendanceCreateForm: View {
                         } else {
                             Text("\(subgroup)-ая подгруппа").tag(subgroup)
                                     .frame(width: 150)
-
                         }
                     }
                 }
                 .pickerStyle(MenuPickerStyle())
                 .frame(width: 140)
                 .padding(.top)
-
             }
             .padding(.top)
 
@@ -57,7 +69,7 @@ struct AttendanceCreateForm: View {
             .background(Color.blue)
             .foregroundColor(.white)
 
-            ForEach($viewModel.attendances, id:\.studentId) { $attendance in
+            ForEach($viewModel.attendances, id: \.studentId) { $attendance in
                 if(viewModel.subgroup == 0 || viewModel.subgroup == attendance.studentSubgroup) {
                     HStack {
                         Text(attendance.studentFullName)
@@ -65,13 +77,20 @@ struct AttendanceCreateForm: View {
                             .frame(width: 170)
                         Spacer()
 
-                        Picker(selection: $attendance.attendanceStatus, label: Text("")) {
-                            ForEach(AttendanceStatus.allCases, id: \.self) { status in
-                                Text(status.shortName).tag(status)
-                            }
-                        }
-                        .pickerStyle(MenuPickerStyle())
-                        .frame(width: 150)
+                        Text(attendance.attendanceStatus.shortName)
+                                                    .onTapGesture(count: 2) {
+                                                        if attendance.attendanceStatus == .PRESENT {
+                                                            attendance.attendanceStatus = .ABSENT
+                                                        } else {
+                                                            attendance.attendanceStatus = .PRESENT
+                                                        }
+                                                    }
+                                                Button(action: {
+                                                    selectedAttendance = attendance
+                                                    showStatusPicker.toggle()
+                                                }) {
+                                                    Image(systemName: "chevron.down")
+                                                }
                     }
                     .padding()
                 }
@@ -79,10 +98,11 @@ struct AttendanceCreateForm: View {
             
             Button("Сохранить") {
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "YYYY-MM-DDTHH:MM"
+                dateFormatter.dateFormat = "yyyy-MM-dd"
                 let formattedDate = dateFormatter.string(from: date)
+                let formattedDateTime = "\(formattedDate)T\(selectedTime)"
                 
-                viewModel.saveAttendances(statementId: statementId, date: formattedDate)
+                viewModel.saveAttendances(statementId: statementId, saveDate: formattedDateTime)
             }
             .padding()
             .foregroundColor(.blue)
@@ -93,12 +113,26 @@ struct AttendanceCreateForm: View {
             .stroke(.blue, lineWidth: 2))
             .padding(.top)
         }
-        .onAppear(){
+        .onAppear {
             viewModel.getStudents(group: group, statement: statementId)
         }
-        .onChange(of: viewModel.changed, {
+        .onChange(of: viewModel.changed) { _ in
             presentationMode.wrappedValue.dismiss()
-        })
+        }
         .navigationBarTitle("Создать посещаемость", displayMode: .inline)
+        .actionSheet(isPresented: $showStatusPicker) {
+                    ActionSheet(
+                        title: Text("Изменить статус"),
+                        buttons: AttendanceStatus.allCases.map { status in
+                            .default(Text(status.shortName)) {
+                                if let selected = selectedAttendance {
+                                    if let index = viewModel.attendances.firstIndex(where: { $0.studentId == selected.studentId }) {
+                                        viewModel.attendances[index].attendanceStatus = status
+                                    }
+                                }
+                            }
+                        } + [.cancel()]
+                    )
+                }
     }
 }

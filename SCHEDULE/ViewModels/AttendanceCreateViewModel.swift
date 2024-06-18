@@ -9,7 +9,7 @@ class AttendanceCreateViewModel: ObservableObject {
 
     private var cancellables = Set<AnyCancellable>()
 
-    func saveAttendances(statementId: Int, date: String) {
+    func saveAttendances(statementId: Int, saveDate: String) {
         let url = URL(string: "http://localhost:8080/api/attendance/save")!
         
         var request = URLRequest(url: url)
@@ -21,9 +21,7 @@ class AttendanceCreateViewModel: ObservableObject {
                 } else {
                     filteredAttendances = attendances.filter { $0.studentSubgroup == subgroup }
                 }
-                
-        let attendanceRequest = AttendanceRequest(statementId: statementId, date: attendances.first!.attendanceDate, attendances: filteredAttendances)
-        print("Attendance request: ", attendanceRequest)
+        let attendanceRequest = AttendanceRequest(statementId: statementId, date: "\(saveDate):00.000000", attendances: filteredAttendances)
         do {
             let jsonData = try JSONEncoder().encode(attendanceRequest)
             request.httpBody = jsonData
@@ -41,7 +39,6 @@ class AttendanceCreateViewModel: ObservableObject {
                 
                 if let data = data {
                     let responseString = String(data: data, encoding: .utf8)
-                    print("Response: \(responseString ?? "No response")")
                     self.changed = true
                 }
             }
@@ -79,7 +76,6 @@ class AttendanceCreateViewModel: ObservableObject {
                 }
             }, receiveValue: { [weak self] response in
                 self?.attendances = response
-                print("Students: ", response)
             })
             .store(in: &cancellables)
     }
